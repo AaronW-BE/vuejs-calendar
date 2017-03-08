@@ -8,17 +8,16 @@ A calendar component for vuejs2
 # Usage
 
 ## install
-·npm install vuejs-calendar·
+· npm install vuejs-calendar ·
 
 ## reference in your project
-> demo.vue
+ demo.vue
 ```
 <template>
   <div>
     <calendar></calendar>
   </div>
 </template>
-
 import calendar from './components/Calendar.vue'
 export default {
   name: 'app',
