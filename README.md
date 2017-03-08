@@ -47,7 +47,7 @@ export default {
 ·cnpm install vuejs-calendar· (淘宝npm镜像)
 
 ## 在项目中引用
-> demo.vue
+demo.vue
 ```
 <template>
   <div>
