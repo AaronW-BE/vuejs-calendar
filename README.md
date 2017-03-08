@@ -34,7 +34,6 @@ export default {
 * SwitchPreviousMonth(from, to)
 * SwitchNextMonth(from, to)
 
-***
 
 # vuejs-calendar
 一款vuejs日历组件
