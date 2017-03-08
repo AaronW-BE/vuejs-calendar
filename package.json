@@ -1,23 +1,21 @@
 {
   "name": "vuejs-calendar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A calendar component for vuejs2",
   "main": "./src/components/Calendar.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronWB/vuejs-calendar.git"
+  },
   "keywords": [
     "Vuejs",
     "Calendar"
   ],
   "author": "AaronW",
   "license": "ISC",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {},
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AaronWB/vuejs-calendar.git"
-  },
   "bugs": {
     "url": "https://github.com/AaronWB/vuejs-calendar/issues"
   },
