@@ -18,7 +18,7 @@ A calendar component for vuejs2
     <calendar></calendar>
   </div>
 </template>
-import calendar from './components/Calendar.vue'
+import calendar from 'vuejs-calendar'
 export default {
   name: 'app',
   components: {
@@ -101,8 +101,7 @@ export default {
     <calendar></calendar>
   </div>
 </template>
-
-import calendar from './components/Calendar.vue'
+import calendar from 'vuejs-calendar'
 export default {
   name: 'app',
   components: {
