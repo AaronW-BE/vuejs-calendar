@@ -40,6 +40,10 @@
         validator: function (value) {
           return value.hasOwnProperty('year') && value.hasOwnProperty('month') && value.hasOwnProperty('date')
         }
+      },
+      debug: {
+        type: Boolean,
+        default: false
       }
     },
     data: function () {
@@ -65,13 +69,13 @@
         this.active.month = targetMonth
         this.active.date = targetDate
 
-        let to = {
+        var to = {
           year: targetYear,
           month: targetMonth,
           date: targetDate
         }
-        console.info('dateChanged',to)
-        this.$emit('dateChanged',to)
+        this.debug && console.info('Event: dateChanged',to)
+        this.$emit('dateChanged',to )
       },
       preMonth: function () {
         // 上一月
@@ -96,11 +100,13 @@
             month: to.month,
             date: this.active.date
         }
-        console.group('月份切换事件')
-        console.log('from', from)
-        console.log('to', to)
-        console.groupEnd()
-        this.$emit('onSwitchPrevious',from , to)
+        if(this.debug){
+          console.group('Evnt:month change')
+          console.log('from', from)
+          console.log('to', to)
+          console.groupEnd()
+        }
+        this.$emit('SwitchPreviousMonth',from , to)
       },
       nextMonth: function () {
         var _year = this.active.year
@@ -122,11 +128,13 @@
           month: to.month,
           date: this.active.date
         }
-        console.group('月份切换事件')
-        console.log('from', from)
-        console.log('to', to)
-        console.groupEnd()
-        this.$emit('onSwitchPrevious',from , to)
+        if(this.debug){
+          console.group('Evnt:month change')
+          console.log('from', from)
+          console.log('to', to)
+          console.groupEnd()
+        }
+        this.$emit('SwitchNextMonth',from , to)
       }
     },
     computed: {
@@ -205,6 +213,7 @@
     flex-direction: column;
     width: 300px;
     box-shadow: 0px 0px 2px grey;
+    text-align: center;
   }
   .c-header{
     height:100px;
