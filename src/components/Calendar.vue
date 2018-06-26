@@ -61,31 +61,31 @@
     },
     methods: {
       dateClicked: function (e) {
-        var targetYear = e.target.dataset.year
-        var targetMonth = e.target.dataset.month
-        var targetDate = e.target.dataset.date
+          let targetYear = e.target.dataset.year;
+          let targetMonth = e.target.dataset.month;
+          let targetDate = e.target.dataset.date;
 //        console.log(e.target.dataset)
-        this.active.year = targetYear
-        this.active.month = targetMonth
-        this.active.date = targetDate
+          this.active.year = targetYear;
+          this.active.month = targetMonth;
+          this.active.date = targetDate;
 
-        var to = {
-          year: targetYear,
-          month: targetMonth,
-          date: targetDate
-        }
-        this.debug && console.info('Event: dateChanged',to)
+          let to = {
+              year: targetYear,
+              month: targetMonth,
+              date: targetDate
+          };
+          this.debug && console.info('Event: dateChanged', to);
         this.$emit('dateChanged',to )
       },
       preMonth: function () {
         // 上一月
 
 //        当前 年月 可读值
-        var _year = this.active.year
-        var _month = this.active.month
+          var _year = this.active.year;
+          var _month = this.active.month;
 
 //
-        var p_Date = new Date(_year, _month-2)
+          var p_Date = new Date(_year, _month - 2);
 
         var from = {
             year: this.active.year,
@@ -139,7 +139,7 @@
     },
     computed: {
       activeDate: function () {
-        if(this._activeDate == null || this._activeDate == 'undefined'){
+        if(this._activeDate == null || this._activeDate === 'undefined'){
             return {
               year: this.today.year,
               month: this.today.month,
@@ -172,9 +172,9 @@
           })
         }
 //        console.log(currentMonthDays)
-        var nextMonthDays = []
-        var endDay = new Date(this.active.year, this.active.month, 0).getDay()
-        for(var i=1; i<7-endDay; i++){
+          let nextMonthDays = [];
+          let endDay = new Date(this.active.year, this.active.month, 0).getDay();
+        for(let i=1; i<7-endDay; i++){
 //            console.log(i)
             nextMonthDays.push({
               year: this.active.year,
@@ -183,12 +183,12 @@
             })
         }
 
-        var totalDate = [];
+        let totalDate = [];
         totalDate = totalDate.concat(preMonthDays, currentMonthDays, nextMonthDays);
 
-        var weeks = []
-        for(var i=0; i<totalDate.length; i++){
-            if(i%7 == 0){
+          let weeks = [];
+        for(let i = 0; i<totalDate.length; i++){
+            if(i%7 === 0){
                 weeks[parseInt(i/7)] = new Array(7)
             }
             weeks[parseInt(i/7)][i%7] = totalDate[i]
@@ -211,7 +211,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 330px;
     box-shadow: 0px 0px 2px grey;
     text-align: center;
   }
