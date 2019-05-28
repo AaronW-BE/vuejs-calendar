@@ -18,7 +18,7 @@
       <div class="c-body-day">
         <div class="c-body-row" v-for="week in weeks">
           <div class="c-body-date"
-               :class="{ placeholder: d.month != active.month, today: d.date == new Date().getDate() && d.month == new Date().getMonth()+1, active: d.date == active.date && d.month == active.month }"
+               :class="{ placeholder: d.month != active.month, today: d.year == new Date().getFullYear() && d.date == new Date().getDate() && d.month == new Date().getMonth()+1, active: d.date == active.date && d.month == active.month }"
                v-for="d in week"
                @click="dateClicked"
                :data-year="d.year"
